@@ -1,2 +1,2 @@
 # BLemish
-UI-focused blemish detection tool using Python and image processing, designed for clear visualization and ease of use.
+Blemish Detection System is a UI-centric computer vision application that enables users to upload images and visually inspect surface blemishes through an intuitive interface. The project emphasizes clear user interaction and result visualization, while integrating basic image processing techniques to detect and highlight defects. It demonstrates the balance between functional computer vision logic and user-friendly design, making defect analysis simple and accessible.
