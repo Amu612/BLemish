@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join BLemish Doctor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('https://img.freepik.com/free-vector/hand-drawn-dermatologist-cartoon-illustration_23-2151016711.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 50;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #c72978;
+        }
+        .header a {
+            text-decoration: none;
+            background-color: pink;
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: black;
+            font-size: 16px;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 30px;
+            width: 60%;
+            margin: 50px auto;
+            border-radius: 10px;
+        }
+        .input-group {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .input-group input {
+            width: 47%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+        .checkbox-group input {
+            width: auto;
+            margin-right: 10px;
+        }
+        /* .className of the div created, tag of which the color must be changed, a->anchor tag */
+        .checkbox-group label a {
+            color: red;
+            text-decoration: none;
+        }
+
+        .loginBtn p a {
+            color: red;
+            text-decoration: none;
+        }
+
+        .button {
+            background-color: pink;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .button:hover {
+            background-color: #f87fbc;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>BLemish</div>
+        <a href="clientSignup.html">Apply as Client</a>
+    </div>
+    <div class="container">
+        <h1>Create a Doctor Account</h1>
+        <form method="POST" action="signup.php">
+            <div class="input-group">
+                <input type="text" name="First_name" placeholder="First Name" required>
+                <input type="text" name="Last_name" placeholder="Last Name" required>
+            </div>
+            <input type="email" name="email" placeholder="Work Email Address" required>
+            <input type="password" name="password" placeholder="Password (8 or more characters)" required>
+            <select name="country" required>
+                <option>Country</option>
+                <option>India</option>
+                <option>United States</option>
+                <option>United Kingdom</option>
+            </select>
+            <div class="checkbox-group">
+                <input type="checkbox" checked>
+                <label>Send me emails with tips on how to find talent that fits my needs.</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" required>
+                <label>Yes, I understand and agree to the <a href="TermsOfService.html">Terms of Service</a>, including the <a href="UserAgreement.html">User Agreement</a> and <a href="PrivacyPolicy.html">Privacy Policy</a>.</label>
+            </div>
+            <div class="loginBtn">
+                <a href="q.html"><button class="button" type="submit" name="DoctorBtn">Create my account</button></a>
+                <p>Already have an account? <a href="Login.html">Log In</a></p>
+            </div>
+        </form>
+    </div>
+    <script src="main.js"></script>
+    
+</body>
+</html>

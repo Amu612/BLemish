@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLemish Questionnaire</title>
+    <style>
+       body {
+           font-family: Arial, sans-serif;
+           margin: 0;
+           padding: 0;
+           background-color: rgb(253, 238, 240);
+           text-align: center;
+           font-size: 22px;
+       }
+
+       header {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           padding: 30px;
+           background: white;
+           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+           font-size: 30px;
+       }
+
+       .logo {
+           color: #c72978;
+           font-weight: bold;
+       }
+
+       .profile-icon {
+           font-size: 32px;
+           color: black;
+           text-decoration: none;
+           cursor: pointer;
+       }
+
+       .container {
+           width: 80%;
+           margin: 80px auto;
+           padding: 50px;
+           background: white;
+           border-radius: 20px;
+           box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+       }
+
+       .options {
+           display: grid;
+           grid-template-columns: 1fr 1fr;
+           gap: 30px;
+           justify-content: center;
+           align-items: center;
+       }
+
+       .option {
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           background: #fff;
+           padding: 30px;
+           border-radius: 20px;
+           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+           cursor: pointer;
+           font-size: 24px;
+           text-align: center;
+           transition: all 0.3s ease-in-out;
+       }
+
+       .option img {
+           width: 150px;
+           height: 150px;
+           margin-bottom: 15px;
+       }
+
+       /* Hide radio buttons */
+       .option input {
+           display: none;
+       }
+
+       /* Highlight selected option */
+       .option.selected {
+           border: 3px solid #c72978;
+           box-shadow: 0 5px 20px #c72978(0, 128, 0, 0.6);
+           background-color: rgb(249, 209, 216);
+       }
+
+       .buttons {
+           margin-top: 60px;
+           display: flex;
+           justify-content: center;
+           gap: 30px;
+       }
+
+       button {
+           padding: 18px 35px;
+           border: none;
+           border-radius: 12px;
+           cursor: pointer;
+           font-size: 24px;
+           background-color: pink;
+           color: black;
+           font-weight: bold;
+       }
+
+       .buttons .back {
+           background-color: pink;
+       }
+
+       .buttons .skip {
+           background-color: pink;
+       }
+
+       .buttons .next {
+           background-color: pink;
+       }
+
+       /* Disabled button styling */
+       .next:disabled {
+           background-color: lightgray;
+           cursor: not-allowed;
+       }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">BLemish</div>
+        <a href="profile.html"><div class="user-icon">&#128100;</div></a>
+    </header>
+
+    <main>
+        <p class="step">2/3</p>
+        <h1>Got it. What's your biggest goal?</h1>
+        <p class="subtext">
+            Different people come to BLemish for various reasons. We want to highlight the solutions that
+            fit your goals.
+        </p>
+
+        <div class="options">
+            <label class="option">
+                <input type="radio" name="freelance" value="main income" onclick="enableNext(this)">
+                <div class="content">
+                    <img src="https://media.istockphoto.com/id/1418878916/vector/concept-of-dermatology.jpg?s=612x612&w=0&k=20&c=IypGZACCkI5HoQ8oxIh4GlbNz7kXcOZMCIHAFJFe34I=" alt="Money">
+                    <p>Face Acne</p>
+                </div>
+            </label>
+
+            <label class="option">
+                <input type="radio" name="freelance" value="side income" onclick="enableNext(this)">
+                <div class="content">
+                    <img src="https://media.istockphoto.com/id/1410621534/vector/doctor-examine-patient-with-red-rash.jpg?s=612x612&w=0&k=20&c=t_yr1MWHMDZAF2dSHGKugp9P00H1upuGAuxmbx5Uc5M=" alt="Earn">
+                    <p>Body Acne</p>
+                </div>
+            </label>
+
+            <label class="option">
+                <input type="radio" name="freelance" value="experience" onclick="enableNext(this)">
+                <div class="content">
+                    <img src="https://media.istockphoto.com/id/1359147039/vector/doctor-check-guy-with-psoriasis-on-arm.jpg?s=612x612&w=0&k=20&c=zT1m8OMawcYpGOTbQYW5ySt_CED78qitu6g6YA5JEns=" alt="Medal">
+                    <p>Face and Body Acne</p>
+                </div>
+            </label>
+        
+            <label class="option last-option">
+                <input type="radio" name="freelance" value="No goal" onclick="enableNext(this)">
+                <div class="content">
+                    <img src="https://media.istockphoto.com/id/1473773326/vector/woman-enjoy-face-care-treatment-in-salon.jpg?s=612x612&w=0&k=20&c=erO4U_JEEMm40S293t95uITbiEPSN-LKWkoZKAjaz7c=" alt="Magnifying glass">
+                    <p>Other</p>
+                </div>
+            </label>
+        </div>
+
+        <div class="buttons">
+            <a href="q1.html"><button class="back">Back</button></a>
+            <a href="profile.html"><button class="skip">Skip for now</button></a>
+            <a href="q3.html"><button class="next" id="nextBtn" disabled>Next</button></a>
+        </div>
+    </main>
+
+    <script>
+        function enableNext(selectedOption) {
+            // Enable "Next" button
+            document.getElementById("nextBtn").removeAttribute("disabled");
+
+            // Remove selection from all options
+            let options = document.querySelectorAll(".option");
+            options.forEach(option => option.classList.remove("selected"));
+
+            // Highlight selected option
+            selectedOption.closest(".option").classList.add("selected");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLemish Questionnaire</title>
+    <style>
+       body {
+           font-family: Arial, sans-serif;
+           margin: 0;
+           padding: 0;
+           background-color: rgb(253, 238, 240);
+           text-align: center;
+           font-size: 22px;
+       }
+
+       header {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           padding: 30px;
+           background: white;
+           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+           font-size: 30px;
+       }
+
+       .logo {
+           color: #c72978;
+           font-weight: bold;
+       }
+
+       .profile-icon {
+           font-size: 32px;
+           color: black;
+           text-decoration: none;
+           cursor: pointer;
+       }
+
+       .container {
+           width: 80%;
+           margin: 80px auto;
+           padding: 50px;
+           background: white;
+           border-radius: 20px;
+           box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+       }
+
+       .options {
+           display: flex;
+           justify-content: space-around;
+           margin: 50px 0;
+       }
+
+       .option {
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           background: #fff;
+           padding: 30px;
+           border-radius: 20px;
+           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+           cursor: pointer;
+           font-size: 26px;
+           transition: all 0.3s ease;
+       }
+
+       .option img {
+           width: 180px;
+           height: 180px;
+           margin-bottom: 20px;
+       }
+
+       .buttons {
+           margin-top: 80px;
+           display: flex;
+           justify-content: center;
+           gap: 30px;
+       }
+
+       button {
+           padding: 18px 35px;
+           border: none;
+           border-radius: 12px;
+           cursor: pointer;
+           font-size: 24px;
+           background-color: pink;
+           color: black;
+           font-weight: bold;
+       }
+
+       .buttons .back {
+           background-color: pink;
+       }
+
+       .buttons .skip {
+           background-color: pink;
+       }
+
+       .buttons .next {
+           background-color: pink;
+       }
+
+       /* Disabled button styling */
+       .next:disabled {
+           background-color: lightgray;
+           cursor: not-allowed;
+       }
+
+       /* Hide radio buttons */
+       .option input {
+           display: none;
+       }
+
+       /* Highlight selected option */
+       .option.selected {
+        border: 3px solid #c72978;
+           box-shadow: 0 5px 20px #c72978(0, 128, 0, 0.6);
+           background-color: rgb(252, 231, 235);
+       }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">BLemish</div>
+        <a href="profile.html"><div class="user-icon">&#128100;</div></a>
+    </header>
+
+    <main>
+        <p class="step">1/3</p>
+        <h1>A few quick questions: What is your primary concern</h1>
+        <p class="subtext">
+            This lets us know what help to give you along the way. We share your answer with potential doctors.
+        </p>
+
+        <div class="options">
+            <label class="option" onclick="enableNext(this)">
+                <input type="radio" name="client" value="new">
+                <div class="content">
+                    <img src="https://img.freepik.com/free-vector/puberty-girl-skin-problems-puberty_1308-132483.jpg?semt=ais_hybrid&w=740" alt="Brand New">
+                    <p>Acne</p>
+                </div>
+            </label>
+
+            <label class="option" onclick="enableNext(this)">
+                <input type="radio" name="client" value="some-experience">
+                <div class="content">
+                    <img src="https://www.shutterstock.com/shutterstock/videos/1111769881/thumb/8.jpg?ip=x480" alt="Some Experience">
+                    <p>Scars</p>
+                </div>
+            </label>
+
+            <label class="option" onclick="enableNext(this)">
+                <input type="radio" name="client" value="expert">
+                <div class="content">
+                    <img src="https://thumbs.dreamstime.com/b/cartoon-depiction-youthful-male-displaying-acne-his-facial-skin-cartoon-depicts-young-man-acne-forehead-nose-321471649.jpg" alt="Expert">
+                    <p>Pigmentation</p>
+                </div>
+            </label>
+        </div>
+
+        <div class="buttons">
+            <a href="q.html"><button class="back">Back</button></a>
+            <a href="profile.html"><button class="skip">Skip for now</button></a>
+            <a href="q2.html"><button class="next" id="nextBtn" disabled>Next</button></a>
+        </div>
+    </main>
+
+    <script>
+        function enableNext(selectedOption) {
+            // Enable "Next" button
+            document.getElementById("nextBtn").removeAttribute("disabled");
+
+            // Remove selection from all options
+            let options = document.querySelectorAll(".option");
+            options.forEach(option => option.classList.remove("selected"));
+
+            // Highlight selected option
+            selectedOption.classList.add("selected");
+
+            // Ensure the correct radio input is checked
+            selectedOption.querySelector("input").checked = true;
+        }
+    </script>
+
+</body>
+</html>

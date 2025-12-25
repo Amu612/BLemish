@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .username {
+      font-size: 24px;
+      font-weight: bold;
+      padding-left: 20px;
+      padding-top: 20px;
+    }
+
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ccc;
+    }
+
+    .edit-button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: pink; 
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    .posts-section {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f8f8f8;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      border-top: 1px solid #ccc;
+    }
+
+    .bottom-nav a img {
+      width: 24px;
+      height: 24px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="username" id="username">Loading...</div>
+
+    <div class="profile-section">
+      <img id="profile-pic" class="profile-pic" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Profile Picture">
+      <a href="edit.html" class="edit-button">Edit profile</a>
+    </div>
+
+    <div class="posts-section" id="posts">
+      <!-- User posts will be rendered here -->
+      <p>No posts yet.</p>
+    </div>
+  </div>
+
+  <div class="bottom-nav">
+    <a href="home.html"><img src="https://img.icons8.com/ios-filled/50/000000/home.png" alt="Home"></a>
+    <a href="search.html"><img src="https://img.icons8.com/ios-filled/50/000000/search--v1.png" alt="Search"></a>
+    <a href="post.html"><img src="https://img.icons8.com/ios/50/000000/plus-math.png" alt="Post"></a>
+    <a href="profile.html"><img src="https://img.icons8.com/ios-filled/50/000000/user.png" alt="Profile"></a>
+  </div>
+
+  <script>
+    // Simulated user data fetch
+    const user = {
+      username: "hunted_co_",
+      profilePic: "" // If a custom profile pic URL is present, add it here
+    };
+
+    // Update username and profile picture
+    document.getElementById("username").innerText = user.username;
+    if (user.profilePic) {
+      document.getElementById("profile-pic").src = user.profilePic;
+    }
+  </script>
+
+</body>
+</html>

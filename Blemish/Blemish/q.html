@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLemish Onboarding</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: black;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            font-size: 24px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .left-section {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            font-size: 20px;
+        }
+
+        .step img {
+            width: 24px;
+            margin-right: 10px;
+        }
+
+        .get-started {
+            background-color: #ee1783;
+            color: white;
+            font-size: 18px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .right-section {
+            flex: 1;
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #c72978;
+        }
+
+        .profile-name {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .profile-issue {
+            color: gray;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .rating {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial {
+            font-size: 16px;
+            color: gray;
+            text-align: left;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        
+
+        .nav-arrow {
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo" style="color: #c72978;"><b>BLemish</b></div>
+    <a href="profile.html"><div class="user-icon">&#128100;</div></a>
+</header>
+
+<div class="container">
+    <div class="left-section">
+        <h1>Hey #name from profile(fetch from db)# . Ready for your treatement?</h1>
+        <div class="step">
+            <span>&#128100;</span> Answer a few questions and build your profile
+        </div>
+        <div class="step">
+            <span>&#9993;</span> Apply for doctors
+        </div>
+        <div class="step">
+            <span>&#128274;</span> Get treated safely and know we’re here to help
+        </div>
+        <a href="q1.html"><button class="get-started">Get started</button></a>
+        <p style="color: gray; font-size: 14px;">It only takes 5-10 minutes and you can edit it later. We’ll save as you go.</p>
+    </div>
+
+    <div class="right-section">
+        <img class="profile-img" src="https://randomuser.me/api/portraits/women/50.jpg" alt="User Profile">
+        <p class="profile-name">Salini M.</p>
+        <p class="profile-issue">Acne and acne scars</p>
+        <p class="rating">⭐ 5.0 &nbsp;  📌 16 weeks</p>
+        <p class="testimonial">
+            “BLemish has enabled me to <b>cure my skin</b>. I know what I'm bringing to the table and love the feeling 
+            of being helped by my favourite <b>doctor</b>.”
+        </p>
+        <div class="navigation">
+            <span class="nav-arrow">&#8592;</span>
+            <span class="nav-arrow">&#8594;</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

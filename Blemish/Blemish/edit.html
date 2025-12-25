@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edit Profile</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: white;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .heading {
+      font-size: 24px;
+      font-weight: bold;
+      color: black;
+      margin-top: 20px;
+    }
+
+    .add-dp-btn {
+      margin-top: 5px;
+      margin-bottom: 30px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: blue;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      width: 80%;
+      max-width: 300px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid white;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="heading">Edit Profile</div>
+
+    <button class="add-dp-btn">Add DP</button>
+
+    <div class="form-group">
+      <label for="bio">BIO</label>
+      <input type="text" id="bio" name="bio" placeholder="Enter your bio">
+    </div>
+
+    <div class="form-group">
+      <label for="gender">GENDER</label>
+      <input type="text" id="gender" name="gender" placeholder="Enter your gender">
+    </div>
+  </div>
+
+</body>
+</html>

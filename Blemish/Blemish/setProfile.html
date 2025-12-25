@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLemish Profile Setup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .header {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #c72978;
+        }
+        .user-icon {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 32px;
+            cursor: pointer;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .btn {
+            display: block;
+            width: 300px;
+            padding: 15px;
+            margin: 10px auto;
+            border: 2px solid #c72978;
+            color: #c72978;
+            background: white;
+            text-align: center;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .btn:hover {
+            background: #c72978;
+            color: white;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            padding: 20px;
+            background: white;
+            border: 2px solid #ccc;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        .popup img {
+            width: 100%;
+        }
+        .close {
+            display: block;
+            margin-top: 10px;
+            padding: 10px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .upload-box {
+            margin-top: 15px;
+            border: 2px dashed #ccc;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .submit-btn {
+            display: block;
+            margin-top: 10px;
+            padding: 10px;
+            background: #c72978;
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">BLemish</div>
+    <a href="profile.html"><div class="user-icon">&#128100;</div></a>
+    <div class="container">
+        <h2>How would you like to tell us about yourself?</h2>
+        <button class="btn" onclick="openPopup('linkedinPopup')">Import from LinkedIn</button>
+        <button class="btn" onclick="openPopup('resumePopup')">Upload your resume</button>
+        <button class="btn" onclick="window.location.href='form.html'">Fill out manually (15 min)</button>
+    </div>
+
+    <!-- LinkedIn Popup -->
+    <div id="linkedinPopup" class="popup">
+        <img src="pic.png" alt="Upload LinkedIn Profile">
+        <input type="file" accept=".pdf" class="upload-box" onchange="enableSubmit('linkedinSubmit', this)">
+        <button id="linkedinSubmit" class="submit-btn" disabled>Submit</button>
+        <button class="close" onclick="closePopup('linkedinPopup')">Close</button>
+    </div>
+
+    <!-- Resume Popup -->
+    <div id="resumePopup" class="popup">
+        <p>Eg..</p>
+        <img src="https://marketplace.canva.com/EAFzfwx_Qik/4/0/1131w/canva-blue-simple-professional-cv-resume-T9RPR4DPdiw.jpg" alt="Upload Resume">
+        <p>Upload your resume (PDF, Word, or text file, max 5MB).</p>
+        <input type="file" accept=".pdf,.doc,.docx,.txt" class="upload-box" onchange="enableSubmit('resumeSubmit', this)">
+        <button id="resumeSubmit" class="submit-btn" disabled>Submit</button>
+        <button class="close" onclick="closePopup('resumePopup')">Close</button>
+    </div>
+
+    <script>
+        function openPopup(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+        function closePopup(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+        function enableSubmit(buttonId, input) {
+            const submitButton = document.getElementById(buttonId);
+            if (input.files.length > 0) {
+                submitButton.style.display = 'block';
+                submitButton.removeAttribute('disabled');
+            } else {
+                submitButton.style.display = 'none';
+                submitButton.setAttribute('disabled', 'true');
+            }
+        }
+    </script>
+</body>
+</html>

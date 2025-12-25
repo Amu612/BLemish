@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join BLemish Client</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('https://media.istockphoto.com/id/1496918610/vector/doctor-treats-acne-in-woman-concept.jpg?s=612x612&w=0&k=20&c=Q_inOAWQjxdcweUa-DNes3dprymMfHO1hRy_7aV9YMs=') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #c72978;
+        }
+        .header a {
+            text-decoration: none;
+            background-color: pink;
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: black;
+            font-size: 16px;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 30px;
+            width: 60%;
+            margin: 50px auto;
+            border-radius: 10px;
+        }
+        .input-group {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .input-group input {
+            width: 47%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+        .checkbox-group input {
+            width: auto;
+            margin-right: 10px;
+        }
+        .checkbox-group label a {
+            color: red;
+            text-decoration: none;
+        }
+
+        .loginBtn p a {
+            color: red;
+            text-decoration: none;
+        }
+
+        .button {
+            background-color: pink;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .button:hover {
+            background-color: #f87fbc;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>BLemish</div>
+        <a href="doctorSignup.html">Join as Doctor</a>
+    </div>
+    <div class="container">
+        <h1>Create a Client Account</h1>
+        <div class="input-group">
+            <input type="text" placeholder="First Name">
+            <input type="text" placeholder="Last Name">
+        </div>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password (8 or more characters)">
+        <select>
+            <option>Country</option>
+            <option>India</option>
+            <option>United States</option>
+            <option>United Kingdom</option>
+        </select>
+        <div class="checkbox-group">
+            <input type="checkbox" checked>
+            <label>Send me helpful emails to find rewarding work and job leads.</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox">
+            <label>Yes, I understand and agree to the <a href="TermsOfService.html">Terms of Service</a>, including the <a href="UserAgreement.html">User Agreement</a> and <a href="PrivacyPolicy.html">Privacy Policy</a>.</label>
+        </div>
+
+        <div class="loginBtn">
+        <a href="q.html"><button class="button">Create my account</button></a>
+        <p>Already have an account? <a href="Login.html">Log In</a></p>
+        
+    </div>
+
+    <?php include 'signup.php'; ?>
+    
+</body>
+</html>

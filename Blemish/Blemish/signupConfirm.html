@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join as Client or Freelancer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('https://www.metahealthcover.com/images/dermatologist-img.png') no-repeat center center/cover;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            text-align: left;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #FF69B4;
+        }
+        .content-box {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            width: 50%;
+            margin: 100px auto;
+            border-radius: 15px;
+            color: white;
+        }
+        .option {
+            display: inline-block;
+            padding: 20px;
+            width: 250px;
+            border: 2px solid #fff;
+            margin: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            background-color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: black;
+        }
+        .option:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+        }
+        .selected {
+            border-color: #FF69B4;
+            box-shadow: 0px 4px 10px #f87fbc(0, 128, 0, 0.5);
+        }
+        .button {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 24px;
+            background-color: pink;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .button:hover {
+            background-color: #f87fbc;
+            transform: scale(1.05);
+        }
+        .disabled {
+            background-color: grey;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">GigEco</div>
+    <div class="content-box">
+        <h1>Join as a Client or Doctor</h1>
+        <div class="container">
+            <div id="clientOption" class="option selected" onclick="selectOption('client')">
+                <p>
+                    <strong>I'm a doctor</strong>
+                </p>
+            </div>
+            <div id="freelancerOption" class="option" onclick="selectOption('freelancer')">
+                <p>
+                    <strong>I'm a client</strong>
+                </p>
+            </div>
+        </div>
+        <button id="clientButton" class="button" onclick="redirectTo('doctorSignup.html')">Join as a Doctor</button>
+        <button id="freelancerButton" class="button disabled" onclick="redirectTo('clientSignup.html')" disabled>Apply as a Client</button>
+    </div>
+    <script>
+        function selectOption(role) {
+            if (role === 'client') {
+                document.getElementById('clientOption').classList.add('selected');
+                document.getElementById('freelancerOption').classList.remove('selected');
+                document.getElementById('clientButton').disabled = false;
+                document.getElementById('freelancerButton').disabled = true;
+                document.getElementById('clientButton').classList.remove('disabled');
+                document.getElementById('freelancerButton').classList.add('disabled');
+            } else {
+                document.getElementById('freelancerOption').classList.add('selected');
+                document.getElementById('clientOption').classList.remove('selected');
+                document.getElementById('freelancerButton').disabled = false;
+                document.getElementById('clientButton').disabled = true;
+                document.getElementById('freelancerButton').classList.remove('disabled');
+                document.getElementById('clientButton').classList.add('disabled');
+            }
+        }
+
+        function redirectTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

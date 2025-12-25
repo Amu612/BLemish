@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GigEco | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0,0,0,0.7)), url('https://schoolforfreelancers.com/wp-content/uploads/2023/10/young-woman-freelancer-working-in-a-coffeehouse-u-2023-06-07-17-57-09-utc.jpg') no-repeat center center/cover;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #90EE90;
+        }
+
+        .nav-links, .auth-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .dropdown {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        .dropdown button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            min-width: 160px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background 0.3s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #333;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .auth-buttons button {
+            margin-left: 10px;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #90EE90;
+            color: #000;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .auth-buttons button:hover {
+            background-color: #76c776;
+        }
+
+        .hero {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .hero-content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 600px;
+        }
+
+        .hero-content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .button-group {
+            margin: 15px 0;
+        }
+
+        .button-group button {
+            background: #90EE90;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button-group button:hover {
+            background: #76c776;
+        }
+
+        .how-it-works {
+            background-color: #222;
+            padding: 60px 30px;
+            text-align: center;
+        }
+
+        .how-it-works h2 {
+            font-size: 32px;
+            color: #90EE90;
+            margin-bottom: 40px;
+        }
+
+        .steps-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            background: #333;
+            padding: 30px;
+            border-radius: 10px;
+            width: 250px;
+            margin: 10px;
+            color: #fff;
+        }
+
+        .step h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            font-size: 14px;
+        }
+
+        .cta-section {
+            background-color: #111;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: #90EE90;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 16px;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .cta-section button {
+            padding: 12px 25px;
+            background-color: #90EE90;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cta-section button:hover {
+            background-color: #76c776;
+        }
+
+        footer {
+            background-color: #111;
+            color: #ccc;
+            padding: 30px 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+        footer .footer-col {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        footer .footer-col h4 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        footer .footer-col a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+            transition: color 0.3s;
+        }
+
+        footer .footer-col a:hover {
+            color: #90EE90;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 10px;
+            border-top: 1px solid #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">GigEco</div>
+        <div class="nav-links">
+            <div class="dropdown">
+                <button>Find Talent</button>
+                <div class="dropdown-content">
+                    <a href="post_and_hire.html">Post and Hire</a>
+                    <a href="browse_and_buy.html">Browse and Buy</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button>Find Work</button>
+                <div class="dropdown-content">
+                    <a href="post_and_work.html">Post and Work</a>
+                    <a href="join_gigeco_plus.html">Join GigEco<sup>+</sup></a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button>What's New</button>
+                <div class="dropdown-content">
+                    <a href="blog.html">Blog</a>
+                    <a href="updates.html">Updates</a>
+                </div>
+            </div>
+        </div>
+        <div class="auth-buttons">
+            <button onclick="window.location.href='login.html'">Log in</button>
+            <button onclick="window.location.href='signupConfirm.html'">Sign up</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Connecting Clients with Freelancers Who Deliver</h1>
+            <div class="button-group">
+                <button onclick="window.location.href='find_talent.html'">Find Talent</button>
+                <button onclick="window.location.href='browse_jobs.html'">Browse Jobs</button>
+            </div>
+            <p>How soon are you hiring?</p>
+            <div class="button-group">
+                <button onclick="window.location.href='hiring_now.html'">Now</button>
+                <button onclick="window.location.href='hiring_in_1_2_weeks.html'">In 1-2 weeks</button>
+                <button onclick="window.location.href='no_rush_hiring.html'">No rush</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps-container">
+            <div class="step">
+                <h3>1. Post Your Needs</h3>
+                <p>Create a project or browse pre-defined services to find what suits you best.</p>
+            </div>
+            <div class="step">
+                <h3>2. Connect</h3>
+                <p>Chat with freelancers or receive bids, then choose the best match for your project.</p>
+            </div>
+            <div class="step">
+                <h3>3. Get Work Done</h3>
+                <p>Track progress and receive updates. Approve only when you’re satisfied with the result.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <h2>Ready to Get Started?</h2>
+        <p>Join GigEco today and discover a smarter way to work and hire.</p>
+        <button onclick="window.location.href='signupConfirm.html'">Sign Up for Free</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-col">
+            <h4>GigEco</h4>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Press</a>
+        </div>
+        <div class="footer-col">
+            <h4>Support</h4>
+            <a href="#">Help Center</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+        <div class="footer-col">
+            <h4>Community</h4>
+            <a href="#">Blog</a>
+            <a href="#">Forum</a>
+            <a href="#">Events</a>
+        </div>
+        <div class="footer-col">
+            <h4>Follow Us</h4>
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 GigEco. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
